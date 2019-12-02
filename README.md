@@ -17,6 +17,8 @@ Volume Levels:
 
 ## Demo
 [Demonstration Video](https://youtu.be/FjBthg8KJLI)
+
+![Output Log](/ch1-img/log.png)
  
 Resources:
 - GoPiGo Loudness Sensor - https://gopigo3.readthedocs.io/en/master/api-basic/sensors.html#loudnesssensor
