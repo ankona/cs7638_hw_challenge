@@ -8,8 +8,10 @@ class EarProtector:
 		self.sensor = self.gpg.init_loudness_sensor("AD2")
 		self.measurements = []
 		self.loudness = 0
-		self.thresholds = [600, 800, 1000]
+		self.thresholds = [600, 900, 1200]
 		self.colors = [(0, 255, 0), (255, 0, 255), (255, 0, 0)]
+		self.gpg.set_eye_color(self.colors[0])
+		self.gpg.open_eyes()
 		
 	def blink(self):
 		for i in range(3):
@@ -45,5 +47,5 @@ if __name__ == "__main__":
 	
 		print("Average Loudness: %i" % ep.loudness)
 		print("Loudest Moment: %f" % max(measurements))
-		print("Quietest Moment: %f" % min(measurements))
+		print("Quietest Moment: %f\n" % min(measurements))
 		ep.notify()
