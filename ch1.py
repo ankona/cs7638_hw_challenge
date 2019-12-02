@@ -2,13 +2,13 @@ import time
 import bisect
 from easygopigo3 import EasyGoPiGo3
 
-class EarProtector:
+class EarBot:
 	def __init__(self):
 		self.gpg = EasyGoPiGo3()
 		self.sensor = self.gpg.init_loudness_sensor("AD2")
 		self.measurements = []
 		self.loudness = 0
-		self.thresholds = [600, 900, 1200]
+		self.thresholds = [600, 850, 1200]
 		self.colors = [(0, 255, 0), (255, 0, 255), (255, 0, 0)]
 		self.gpg.set_eye_color(self.colors[0])
 		self.gpg.open_eyes()
@@ -21,7 +21,7 @@ class EarProtector:
 			time.sleep(0.5)
 		#self.gpg.close_eyes()
 		
-	def sample(self, num_samples=25000):
+	def sample(self, num_samples=10000):
 		self.blink()
 		self.loudness = 0
 		self.measurements = []
@@ -40,7 +40,7 @@ class EarProtector:
 
 
 if __name__ == "__main__":
-	ep = EarProtector()
+	ep = EarBot()
 	
 	while True:
 		measurements = ep.sample()
