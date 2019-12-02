@@ -15,3 +15,8 @@ Volume Levels:
 - Orange - put in your ear plugs
 - Red - danger, Will Robinson.
  
+Resources:
+- GoPiGo Loudness Sensor - https://gopigo3.readthedocs.io/en/master/api-basic/sensors.html#loudnesssensor
+- GoPiGo Eye Color - https://gopigo3.readthedocs.io/en/master/api-basic/easygopigo3.html#easygopigo3.EasyGoPiGo3.set_eye_color
+- GoPiGo Port Layout - https://gopigo3.readthedocs.io/en/master/api-basic/structure.html#hardware-ports
+- RGB Color Lookup - https://www.colorhexa.com/ffa500
