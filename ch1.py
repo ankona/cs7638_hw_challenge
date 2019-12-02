@@ -8,8 +8,8 @@ class EarBot:
 		self.sensor = self.gpg.init_loudness_sensor("AD2")
 		self.measurements = []
 		self.loudness = 0
-		self.thresholds = [600, 850, 1200]
-		self.colors = [(0, 255, 0), (255, 0, 255), (255, 0, 0)]
+		self.thresholds = [600, 850, 950, 1500]
+		self.colors = [(0, 255, 0), (255, 0, 255), (100, 65, 0), (255, 0, 0)]
 		self.gpg.set_eye_color(self.colors[0])
 		self.gpg.open_eyes()
 		
