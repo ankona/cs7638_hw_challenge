@@ -78,7 +78,7 @@ if __name__ == "__main__":
 	
 	drive_angle = wb.goto_nearest_wall()
 	
-	for i in range(4):
+	for i in range(5):
 		wb.find_next_wall()
 	
 	
