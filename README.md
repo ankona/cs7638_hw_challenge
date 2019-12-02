@@ -1,6 +1,6 @@
 # Hardware Challenge 1
 ## Goal
-Sense the environment in some way of your choice (light, temperature, sound, water level in your plant, etc.) and respond somehow.  Go to @290 for posting your submission.
+Sense the environment in some way of your choice (light, temperature, sound, water level in your plant, etc.) and respond somehow. 
 
 ## Description
 In this project, I am familiarizing myself with interacting with the GoPiGo board as well as learning how to use attached sensors.
