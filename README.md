@@ -15,6 +15,8 @@ Volume Levels:
 - Orange - put in your ear plugs
 - Red - danger, Will Robinson.
 
+![Loudness Sensor](/ch1-img/loudnesssensor.png)
+
 ## Demo
 [Demonstration Video](https://youtu.be/FjBthg8KJLI)
 
@@ -34,6 +36,8 @@ Affect the environment in some way of your choice (move an object, make a robot 
 In this project, I am familiarizing myself with GoPiGo movement as well as a new sensor and capability. In my implementatioon, I will use a Dexter Industries distance sensor to measure the distance to a "wall" and the Dexter Industries servo to adjust the sensor angle.
 
 Given the set of measurements, my robot will attempt to autonomously follow the walls of his sad, rectangular world.
+
+![Distance Sensor](/ch2-img/distancesensor.png)
 
 ## Demo
 [Demonstration Video - Square World](https://youtu.be/FjBthg8KJLI)
