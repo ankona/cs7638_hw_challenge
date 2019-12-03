@@ -48,3 +48,19 @@ Resources:
 - GoPiGo Distance Sensor - https://di-sensors.readthedocs.io/en/master/api-basic.html#di_sensors.easy_distance_sensor.EasyDistanceSensor
 - GoPiGo Servo - https://gopigo3.readthedocs.io/en/master/api-basic/sensors.html#servo
 - GoPiGo Movement - https://gopigo3.readthedocs.io/en/master/tutorials-basic/driving.html
+
+# Hardware Challenge 3 - Rudolph Bot
+## Goal
+Implement something pertaining to one of the lectures in hardware.
+
+## Description
+RudolphBot misses Santa. At any moment, you will find him trying to get back to the north pole...
+
+RudolphBot uses a PID controller to adjust bearing until he is driving north. RudolphBot makes use of an IMU (Inertial Measurement Unit) by Dexter Industries to determine his current heading and where north is.
+
+
+
+Resources:
+- GoPiGo Distance Sensor - https://di-sensors.readthedocs.io/en/master/api-basic.html#di_sensors.easy_distance_sensor.EasyDistanceSensor
+- GoPiGo IMU Sensor - https://di-sensors.readthedocs.io/en/master/api-basic.html#easyimusensor
+
