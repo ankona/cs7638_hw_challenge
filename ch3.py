@@ -5,12 +5,12 @@ from time import sleep
 
 class RudolphBot:
 	TAU = 0.4
-	OBS_SAFE_DIST = 6
+	OBS_SAFE_DIST = 12
 	
 	def __init__(self):
 		self.gpg = EasyGoPiGo3()
 		self.sensor = EasyIMUSensor(port='AD2')
-		self.target_heading = self.sensor.safe_north_point()
+		self.target_heading = 0 # self.sensor.safe_north_point()
 		self.distance_sensor = self.gpg.init_distance_sensor("GPG3_AD1")
 		
 		print("current heading: %f" % self.get_current_heading())
@@ -18,6 +18,8 @@ class RudolphBot:
 
 	def get_current_heading(self):
 		heading, _, _ = self.sensor.safe_read_euler() 
+		heading, a, b = self.sensor.safe_read_euler() 
+		print(heading, a, b)
 		return heading
 	
 	def check_for_obstacles(self):
@@ -36,8 +38,8 @@ class RudolphBot:
 			if self.check_for_obstacles():
 				break
 				
-			self.gpg.forward() # (5)
-			#sleep(0.5)
+			#self.gpg.forward() # (5)
+			#sleep(0.3)
 			#sleep(1.0)
 			
 			alpha = self.p_controller_get_angle()
@@ -47,10 +49,21 @@ class RudolphBot:
 				break
 				
 			#self.gpg.turn_degrees(alpha)
-			if abs(alpha) > 0:
-				left()
+			if alpha > 0:#
+				print('drive right')
+				self.gpg.right()
+				#self.gpg.steer(50, 100)
+				#self.gpg.orbit(-alpha, 30)
 			else:
-				right()
+				print('drive left')
+				self.gpg.left()
+				#self.gpg.steer(100, 50)
+				#self.gpg.orbit(alpha, 30)
+			
+			sleep(0.2)
+			print('going straight for a bit...')	
+			self.gpg.drive_cm(100.0 * (abs(alpha) / 100))
+			
 			
 		self.stop()
 		
@@ -62,8 +75,6 @@ class RudolphBot:
 			cte = 360 - current
 		else:
 			cte = -current
-		
-		#cte = self.sensor.safe_north_point()
 		
 		print('current cte is: %f' % cte)
 		
